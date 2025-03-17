@@ -2,7 +2,8 @@
 
 ## Overview
 
-TODO: Write a project description
+This is a simple program/game where the player uses their curser to control an
+"evil" ball that destroys all the other balls floating around the screen. 
 
 ## Sources and Credits
 
@@ -15,10 +16,6 @@ permission from your instructor.
 
 A simple bulleted list below is sufficient. For example:
 
-- Bootstrap: https://getbootstrap.com/
-- jQuery: https://jquery.com/
-- Background image: https://unsplash.com/photos/...
-- Sound effects: https://freesound.org/people/...
-- Icons: https://fontawesome.com/
-- Fonts: https://fonts.google.com/
-- etc.
+- Used this guide for to get the evil circle to follow the mouse: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+- I had some help from github copilot as well as a friend that helped me with 
+the shape class

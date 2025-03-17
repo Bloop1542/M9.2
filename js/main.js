@@ -65,20 +65,19 @@ class Ball extends Shape {
   }
 }
 
-// EvilCircle class
+// EvilCircle class 
 class EvilCircle extends Shape {
-  constructor(x, y) {
-    super(x, y, 20, 20);
+  constructor() {
+    super(width/2, height/2, 0, 0); 
     this.color = "white";
-    this.size = 10;
-
-    window.addEventListener("keydown", (e) => {
-      switch (e.key) {
-        case "a": this.x -= this.velX; break;
-        case "d": this.x += this.velX; break;
-        case "w": this.y -= this.velY; break;
-        case "s": this.y += this.velY; break;
-      }
+    this.size = 20; 
+    
+    // Mouse move handler
+    canvas.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      this.x = e.clientX - rect.left;
+      this.y = e.clientY - rect.top;
+      this.checkBounds(); // Ensure stays within canvas
     });
   }
 
@@ -111,7 +110,7 @@ class EvilCircle extends Shape {
   }
 }
 
-// Initialize balls
+// Initialize balls 
 const balls = [];
 while (balls.length < 25) {
   const size = random(10, 20);
@@ -127,13 +126,10 @@ while (balls.length < 25) {
   );
 }
 
-// Initialize evil circle
-const evilCircle = new EvilCircle(
-  random(20, width - 20),
-  random(20, height - 20)
-);
+// Initialize evil circle 
+const evilCircle = new EvilCircle();
 
-// Animation loop
+// Animation loop 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
